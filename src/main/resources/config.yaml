@@ -1,0 +1,15 @@
+# Salesfoce Connection
+salesforce:
+  consumerkey: "my-consumer-key"
+  keystore: "my-keystore.jks"
+  storepassword: "the-kystore-password"
+  principal: "user-in-salesforce"  
+  
+#OpenTelemtry configuration
+otel:
+  collectorendpoint: "http://localhost:4317"
+  
+# Logging - Provide next values as system properties
+# logzio.token: "MyToken"
+# logzio.url: "MyUrl"
+# logzio.url: "
