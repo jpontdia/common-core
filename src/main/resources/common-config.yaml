@@ -8,6 +8,7 @@ salesforce:
 #OpenTelemtry configuration
 otel:
   collectorendpoint: "http://localhost:4317"
+  servicename: "myservice"
   
 # Logging - Provide next values as system properties
 # logzio.token: "MyToken"

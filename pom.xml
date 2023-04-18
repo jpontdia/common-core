@@ -5,22 +5,35 @@
 	<parent>
 		<groupId>078efef1-d139-48ed-92f5-f8d4a0592374</groupId>
 		<artifactId>parent-pom</artifactId>
-		<version>1.0.15</version>
+		<version>1.0.17</version>
 		<relativePath/>
 	</parent>
-	
+
 	<groupId>078efef1-d139-48ed-92f5-f8d4a0592374</groupId>
-	<artifactId>micorp-commons</artifactId>
-	<version>1.0.1</version>
+	<artifactId>micorp-commons-library</artifactId>
+	<version>1.0.9</version>
 	<packaging>mule-application</packaging>
-	<name>micorp-commonsi</name>
-	<descriptionCommon configurations for micorp project</description>
+	<name>micorp-commons</name>
+	<description>Common configurations for micorp project</description>
 
 	<properties>
 		<!-- Exchange documentation -->
-        <fields key="sourceCode">https://github.com/jpontdia/microp-commons</fields>
-        <tags>Micorp, Salesfoce</tags>	
+		<fields key="sourceCode">https://github.com/jpontdia/microp-commons</fields>
+		<tags>Micorp, Salesfoce</tags>
 	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.mule.tools.maven</groupId>
+				<artifactId>mule-maven-plugin</artifactId>
+				<extensions>true</extensions>
+		        <configuration>
+        			<classifier>mule-plugin</classifier>
+        		</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
 	<dependencies>
 		<!-- Salesforce connector -->
@@ -29,39 +42,22 @@
 			<artifactId>mule-salesforce-connector</artifactId>
 			<classifier>mule-plugin</classifier>
 		</dependency>
-		
+
 		<!-- OpenTelemetry connector -->
 		<dependency>
-			<groupId>${project.groupId}</groupId>
-			<artifactId>mule-otel-connector</artifactId>
-			<version>1.0.50</version>
-			<classifier>mule-plugin</classifier>
-		</dependency>
-		
-		<!-- Logging Dependencies-->
-
-		<!-- JSON Logger -->
-		<dependency>
 			<groupId>078efef1-d139-48ed-92f5-f8d4a0592374</groupId>
-			<artifactId>json-logger</artifactId>
+			<artifactId>mule-otel-connector</artifactId>
 			<classifier>mule-plugin</classifier>
-		</dependency>
-		<dependency>
-		    <groupId>org.apache.logging.log4j</groupId>
-		    <artifactId>log4j-core</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-api</artifactId>
-		</dependency>		
-		<dependency>
-		    <groupId>io.logz.log4j2</groupId>
-		    <artifactId>logzio-log4j2-appender</artifactId>
-		</dependency>
-		<dependency>
-  			<groupId>io.logz.sender</groupId>
-  			<artifactId>logzio-sender</artifactId>
-		</dependency>
+		</dependency>	
 	</dependencies>
-
+	
+	<!--Repository to get the artifacts for your Anypoint organization -->
+	<repositories>
+		<repository>
+			<id>anypoint-exchange-v3</id>
+			<name>Anypoint Exchange V3</name>
+			<url>https://maven.anypoint.mulesoft.com/api/v3/maven</url>
+			<layout>default</layout>
+		</repository>
+	</repositories>
 </project>

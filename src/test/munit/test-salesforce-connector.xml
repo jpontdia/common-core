@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:salesforce="http://www.mulesoft.org/schema/mule/salesforce"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:munit="http://www.mulesoft.org/schema/mule/munit"
+	xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd
+http://www.mulesoft.org/schema/mule/salesforce http://www.mulesoft.org/schema/mule/salesforce/current/mule-salesforce.xsd">
+	<munit:config name="test-salesforce-connector.xml" />
+	<munit:test name="test-salesforce-connectorTest" doc:id="5a2bb940-255c-402b-becf-1516818ef5a4" >
+		<munit:execution >
+			<logger level="INFO" doc:name="start" doc:id="bf8189ed-40d7-4389-bd25-770a892ea4e8" message="Test Salesforce Connector"/>
+			<salesforce:query doc:name="Query" doc:id="8a6cb7f1-78ba-49e7-bde4-6b1eaf2dd3e0" config-ref="MicorpSalesforceConfig">
+				<salesforce:salesforce-query ><![CDATA[SELECT firstName__c, lastName__c, address__c, Id 
+FROM Customer__c 
+ WHERE Id ='a018b00000z9s56AAA']]></salesforce:salesforce-query>
+			</salesforce:query>
+			<logger level="INFO" doc:name="result" doc:id="90294034-f6b2-423c-94fe-870b12523978" message="#[payload]"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:assert-that doc:name="Assert that" doc:id="6cff55c3-112c-4545-92c1-29a7cae0f01e" expression="#[payload == null]" is="#[MunitTools::notNullValue()]"/>
+		</munit:validation>
+	</munit:test>
+
+</mule>
