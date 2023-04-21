@@ -9,8 +9,18 @@ salesforce:
 otel:
   collectorendpoint: "http://localhost:4317"
   servicename: "myservice"
+
+#Service messages
+messages:
+  backend-error: "There was a problem while trying to access the backend repository"
+  apikit-400: "Bad request"
+  apikit-404: "Resource not found"
+  apikit-405: "Method not allowed"
+  apikit-406: "Not acceptable"
+  apikit-415: "Unsupported media type"
+  apikit-501: "Not Implemented"
+  
   
 # Logging - Provide next values as system properties
-# logzio.token: "MyToken"
-# logzio.url: "MyUrl"
-# logzio.url: "
+logzio.token: "MyToken"
+logzio.url: "MyUrl"
