@@ -11,7 +11,7 @@
 
 	<groupId>078efef1-d139-48ed-92f5-f8d4a0592374</groupId>
 	<artifactId>micorp-commons-library</artifactId>
-	<version>1.0.10</version>
+	<version>1.0.13</version>
 	<packaging>mule-application</packaging>
 	<name>micorp-commons</name>
 	<description>Common configurations for micorp project</description>
@@ -29,7 +29,7 @@
 				<artifactId>mule-maven-plugin</artifactId>
 				<extensions>true</extensions>
 		        <configuration>
-        			<classifier>mule-plugin</classifier>
+        			<classifier>mule-plugin</classifier>		
         		</configuration>
 			</plugin>
 		</plugins>
@@ -50,23 +50,6 @@
 			<classifier>mule-plugin</classifier>
 		</dependency>
 		
-		<!-- Logging Dependencies-->
-		<dependency>
-		    <groupId>org.apache.logging.log4j</groupId>
-		    <artifactId>log4j-core</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-api</artifactId>
-		</dependency>		
-		<dependency>
-		    <groupId>io.logz.log4j2</groupId>
-		    <artifactId>logzio-log4j2-appender</artifactId>
-		</dependency>
-		<dependency>
-  			<groupId>io.logz.sender</groupId>
-  			<artifactId>logzio-sender</artifactId>
-		</dependency>		
 	</dependencies>
 	
 	<!--Repository to get the artifacts for your Anypoint organization -->

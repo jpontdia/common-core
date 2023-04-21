@@ -21,6 +21,7 @@ messages:
   apikit-501: "Not Implemented"
   
   
-# Logging - Provide next values as system properties
+# Logging - logz.io
+# Add the jar files in the service pom
 logzio.token: "MyToken"
 logzio.url: "MyUrl"
