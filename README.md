@@ -10,7 +10,7 @@ Common configurations for micorp project
 1. [Release notes](releases.md)
 
 ## Description
-Common configurations for micorp mulesoft services
+Common configurations for micorp mulesoft services  
 
 ## Prerequisites
 To compile and build the project:
