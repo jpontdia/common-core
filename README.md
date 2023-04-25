@@ -34,7 +34,7 @@ Configure the maven settings file with:
  - The credentials for the Maven Nexus EE repository
  - Connected app for deployment in the Anypoint organization.
 
-The sensitive data was removed from the configuration files. The next properties must be provided to compile, test and package the service:
+The sensitive data was removed from the configuration files. The next properties must be provided to test the service:
 
 | Property    | Description |
 | ----------- | ----------- |
@@ -68,15 +68,6 @@ maven command to deploy asset in anypoint exchange:
 ```bash
 mvn deploy
 ```
-
-## Additional runtime properties
-
-The table below shows the additional properties that can be customized in the service:
-
-| Property  | Description |
-| --------- | ----------- |
-| api.id    | API Manager instance id |
-| http.port | Listening port for the service |
 
 <br>
 
