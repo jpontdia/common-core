@@ -1,3 +1,6 @@
+# Default environment
+env: local
+
 # Salesfoce Connection
 salesforce:
   consumerkey: "my-consumer-key"

@@ -1,0 +1,14 @@
+name: Build and deploy to Anypoint Exchange
+ 
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+
+jobs:
+  build-and-deploy:
+    uses: jpontdia/mule-build-and-deploy/.github/workflows/build-deploy-exchange.yml@main
+    with:
+      keyvault-key: jpworks-keyvault
+    secrets:
+      azure-credentials: ${{ secrets.AZURE_CREDENTIALS }}
