@@ -22,7 +22,7 @@ To compile and build the project:
    - The Mulesoft EE repositories (to run the test cases)
  - Optional: Anypoint Studio.
 
-Deployment in Anypoint Exchange:
+Deployment in Anypoint Exchange:  
 
  - A connected app for maven deployment
 
