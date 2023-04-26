@@ -83,6 +83,70 @@ http://www.mulesoft.org/schema/mule/validation http://www.mulesoft.org/schema/mu
 	</munit:test>
 
 
+	<munit:test name="apikit-status-500-any-error">
+		<munit:enable-flow-sources >
+			<munit:enable-flow-source value="testapi-main" />
+			<munit:enable-flow-source value="post:\organisation:application\json:testapi-config" />
+		</munit:enable-flow-sources>
+		
+		<munit:behavior >
+			<munit-tools:mock-when
+				doc:name="Mock when"
+				processor="apikit:router" >
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute
+						 whereValue="testapi-config" attributeName="config-ref" />
+				</munit-tools:with-attributes>
+				<munit-tools:then-return >
+					<munit-tools:error typeId="ANY" />
+				</munit-tools:then-return>
+			</munit-tools:mock-when>
+		</munit:behavior>
+		
+		<munit:execution>
+            <logger
+                level="INFO" 
+                doc:name="start" 
+                message="Test apikit 500 scenario" />
+
+			<http:request
+				method="POST"
+				doc:name="POST"
+				config-ref="http_test_local_configuration"
+				path="/api/organisation">
+				<http:body ><![CDATA[#[output application/json
+---
+{
+    "name": "Doe Enterprise",
+    "value": "Silver"
+}]]]></http:body>
+				<http:headers><![CDATA[#[output application/java
+---
+{
+	"UserID" : "MyUserId",
+	"Content-Type" : "application/json"
+}]]]></http:headers>
+				<http:response-validator>
+					<http:success-status-code-validator values="500" />
+				</http:response-validator>
+			</http:request>
+			
+            <logger
+                level="INFO" 
+                doc:name="result" 
+                doc:id="f4f1f3ca-7efb-49e4-b417-b087358e74ad" 
+                message='#[%dw 2.0&#10;output application/json&#10;---&#10;{&#10;   message: "Result",&#10; payload: payload&#10;}]' />
+
+		</munit:execution>
+		<munit:validation>
+			<munit-tools:assert-equals
+				actual="#[attributes.statusCode]"
+				expected="#[500]"
+				message="The status code must be 500"
+				doc:name="status 200" />
+		</munit:validation>
+		
+	</munit:test>
 
 
 	<munit:test name="apikit-status-400-bad-request">
