@@ -5,16 +5,23 @@
 	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
 http://www.mulesoft.org/schema/mule/salesforce http://www.mulesoft.org/schema/mule/salesforce/current/mule-salesforce.xsd">
-	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="918ea22e-d2f9-4d2d-8297-3f5abf4f2160" >
-		<http:listener-connection host="0.0.0.0" port="8081" />
-	</http:listener-config>
+	
 	<flow name="test-configurationFlow" doc:id="7c2250f3-bd3c-47ef-9c92-8faee84d6fc9" >
-		<http:listener doc:name="Listener" doc:id="354afb38-2b11-43a7-bb12-c5251f937c07" config-ref="HTTP_Listener_config" path="testconfiguration" outputMimeType="application/json">
+		<http:listener 
+			doc:name="Listener" 
+			doc:id="354afb38-2b11-43a7-bb12-c5251f937c07" 
+			config-ref="testlocal_HTTP_Listener_config" 
+			path="testconfiguration" 
+			outputMimeType="application/json">
 			<http:response >
 				<http:body ><![CDATA[#[output application/json --- payload]]]></http:body>
 			</http:response>
 		</http:listener>
-		<salesforce:query doc:name="Query" doc:id="2a0cad9a-f86f-40aa-aab8-c070a576f85f" config-ref="MicorpSalesforceConfig">
+		
+		<salesforce:query 
+			doc:name="Query" 
+			doc:id="2a0cad9a-f86f-40aa-aab8-c070a576f85f" 
+			config-ref="MicorpSalesforceConfig">
 			<salesforce:salesforce-query ><![CDATA[SELECT firstName__c, lastName__c, address__c, Id 
 FROM Customer__c 
  WHERE Id ='a018b00000z9s56AAA']]></salesforce:salesforce-query>
