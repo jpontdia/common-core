@@ -11,7 +11,7 @@
 
 	<groupId>078efef1-d139-48ed-92f5-f8d4a0592374</groupId>
 	<artifactId>micorp-commons-library</artifactId>
-	<version>1.0.19</version>
+	<version>1.0.20</version>
 	<packaging>mule-application</packaging>
 	<name>micorp-commons</name>
 	<description>Common configurations for micorp project</description>
