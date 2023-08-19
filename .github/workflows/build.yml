@@ -1,12 +1,17 @@
-name: Build and deploy to Anypoint Exchange
- 
+name: Build and deploy
+
 on:
   push:
     branches: [ "main" ]
   pull_request:
 
 jobs:
-  build-and-deploy:
+  Mulesoft:
+    permissions:
+      contents: read
+      issues: read
+      checks: write
+      pull-requests: write   
     uses: jpontdia/mule-common-devops/.github/workflows/mulesoft.yml@main
     with:
       keyvault-key: jpworks-keyvault
