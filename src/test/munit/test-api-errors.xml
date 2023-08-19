@@ -143,7 +143,7 @@ http://www.mulesoft.org/schema/mule/validation http://www.mulesoft.org/schema/mu
 				actual="#[attributes.statusCode]"
 				expected="#[500]"
 				message="The status code must be 500"
-				doc:name="status 200" />
+				doc:name="status 500" />
 		</munit:validation>
 		
 	</munit:test>
