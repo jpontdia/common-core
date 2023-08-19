@@ -1,41 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <mule xmlns:http="http://www.mulesoft.org/schema/mule/http"
-	xmlns:salesforce="http://www.mulesoft.org/schema/mule/salesforce" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
-	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xsi:schemaLocation="
-		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
-		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
-		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd
-http://www.mulesoft.org/schema/mule/salesforce http://www.mulesoft.org/schema/mule/salesforce/current/mule-salesforce.xsd
-http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
-	<munit:config 
-		name="test-salesforce-connector.xml" />
+	xmlns:salesforce="http://www.mulesoft.org/schema/mule/salesforce"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" 
+	xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
+	xmlns="http://www.mulesoft.org/schema/mule/core" 
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" 
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core 
+		http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit 
+		http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  
+		http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd
+		http://www.mulesoft.org/schema/mule/salesforce 
+		http://www.mulesoft.org/schema/mule/salesforce/current/mule-salesforce.xsd
+		http://www.mulesoft.org/schema/mule/http 
+		http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+
+	<munit:config name="test-salesforce-connector.xml" />
 	<http:request-config 
 		name="HTTP_Request_configuration" 
-		doc:name="HTTP Request configuration" 
-		doc:id="9c82d6d9-4f9c-413d-bd4a-b93b2fbaafaf" >
+		doc:name="HTTP Request configuration">
+	
 		<http:request-connection 
 			host="localhost" 
 			port="8081" />
 	</http:request-config>
 	
 	<munit:test 
-		name="test-salesforce-connectorTest" 
-		doc:id="5a2bb940-255c-402b-becf-1516818ef5a4" >
+		name="test-salesforce-connectorTest">
+
 		<munit:enable-flow-sources >
 			<munit:enable-flow-source value="test-configurationFlow" />
 		</munit:enable-flow-sources>
+		
 		<munit:execution >
 			<logger 
 				level="INFO" 
-				doc:name="start" doc:id="bf8189ed-40d7-4389-bd25-770a892ea4e8" 
+				doc:name="start"
 				message="Test Salesforce Connector"/>
 				
 			<http:request 
 				method="GET" 
 				doc:name="Request" 
-				doc:id="1e1ede21-2c7f-476a-be05-859e5184ab96" 
 				path="/testconfiguration" 
 				config-ref="HTTP_Request_configuration" 
 				outputMimeType="application/json"/>
@@ -43,15 +52,15 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 			<logger 
 				level="INFO" 
 				doc:name="result" 
-				doc:id="90294034-f6b2-423c-94fe-870b12523978" 
 				message="#[payload]"/>
 		</munit:execution>
+
 		<munit:validation >
 			<munit-tools:assert-that 
 				doc:name="Assert that" 
-				doc:id="6cff55c3-112c-4545-92c1-29a7cae0f01e" 
 				expression="#[payload != null]" is="#[MunitTools::notNullValue()]"/>
 		</munit:validation>
+		
 	</munit:test>
 
 </mule>
