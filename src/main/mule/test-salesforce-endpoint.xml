@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<mule xmlns:salesforce="http://www.mulesoft.org/schema/mule/salesforce" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+<mule xmlns:salesforce="http://www.mulesoft.org/schema/mule/salesforce" 
+	xmlns:http="http://www.mulesoft.org/schema/mule/http"
 	xmlns="http://www.mulesoft.org/schema/mule/core"
-	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
-http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
-http://www.mulesoft.org/schema/mule/salesforce http://www.mulesoft.org/schema/mule/salesforce/current/mule-salesforce.xsd">
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core 
+		http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/http 
+		http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+		http://www.mulesoft.org/schema/mule/salesforce 
+		http://www.mulesoft.org/schema/mule/salesforce/current/mule-salesforce.xsd">
 	
-	<flow name="test-configurationFlow" doc:id="7c2250f3-bd3c-47ef-9c92-8faee84d6fc9" >
+	<flow name="test-salesforce-endopoint" >
 		<http:listener 
 			doc:name="Listener" 
-			doc:id="354afb38-2b11-43a7-bb12-c5251f937c07" 
 			config-ref="testlocal_HTTP_Listener_config" 
-			path="testconfiguration" 
+			path="testsalesforce" 
 			outputMimeType="application/json">
+
 			<http:response >
 				<http:body ><![CDATA[#[output application/json --- payload]]]></http:body>
 			</http:response>
@@ -20,12 +27,12 @@ http://www.mulesoft.org/schema/mule/salesforce http://www.mulesoft.org/schema/mu
 		
 		<salesforce:query 
 			doc:name="Query" 
-			doc:id="2a0cad9a-f86f-40aa-aab8-c070a576f85f" 
-			config-ref="MicorpSalesforceConfig">
+			config-ref="GlobalSalesforceConfig">
+			
 			<salesforce:salesforce-query ><![CDATA[SELECT firstName__c, lastName__c, address__c, Id 
 FROM Customer__c 
  WHERE Id ='a018b00000z9s56AAA']]></salesforce:salesforce-query>
 		</salesforce:query>
-		<logger level="INFO" doc:name="show payload" doc:id="ca03dd18-d558-493d-8c68-87e99de72f64" message="#[payload]"/>
+		<logger level="INFO" doc:name="show payload" message="#[payload]"/>
 	</flow>
 </mule>

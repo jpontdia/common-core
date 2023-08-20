@@ -5,21 +5,21 @@
 	xmlns:salesforce="http://www.mulesoft.org/schema/mule/salesforce"
 	xmlns="http://www.mulesoft.org/schema/mule/core"
 	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" 
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core 
-	http://www.mulesoft.org/schema/mule/core/current/mule.xsd
-	http://www.mulesoft.org/schema/mule/salesforce 
-	http://www.mulesoft.org/schema/mule/salesforce/current/mule-salesforce.xsd
-http://www.mulesoft.org/schema/mule/open-telemetry http://www.mulesoft.org/schema/mule/open-telemetry/current/mule-open-telemetry.xsd">
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core 
+		http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/salesforce 
+		http://www.mulesoft.org/schema/mule/salesforce/current/mule-salesforce.xsd
+		http://www.mulesoft.org/schema/mule/open-telemetry 
+		http://www.mulesoft.org/schema/mule/open-telemetry/current/mule-open-telemetry.xsd">
 	
 	<configuration-properties 
-		doc:name="Configuration properties" 
-		doc:id="1f11a665-7cfc-495b-afd3-f6a8816d99e2" 
-		file="common-config.yaml" />
+		doc:name="Configuration properties"
+		file="global-config.yaml" />
 	
 	<salesforce:sfdc-config 
-		name="MicorpSalesforceConfig" 
-		doc:name="Salesforce Config" 
-		doc:id="2bce4238-1628-4000-bd8a-57df3b3f4b48" >
+		name="GlobalSalesforceConfig" 
+		doc:name="Global Salesforce Config" >
 		<salesforce:jwt-connection
 			consumerKey="${salesforce.consumerkey}"
 			keyStore="${salesforce.keystore}"

@@ -5,8 +5,9 @@
 	xmlns:apikit="http://www.mulesoft.org/schema/mule/mule-apikit" 
 	xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" 
 	xmlns:http="http://www.mulesoft.org/schema/mule/http" 
-	xmlns:xsi=
-		"http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core 
 		http://www.mulesoft.org/schema/mule/core/current/mule.xsd 
 		http://www.mulesoft.org/schema/mule/http 
 		http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd 
@@ -22,8 +23,7 @@
     	httpStatusVarName="httpStatus" />    
     	
     <http:listener-config name="testlocal_HTTP_Listener_config"
-    	doc:name="HTTP Listener config" 
-    	doc:id="07174c03-0671-4519-9e87-15023f055b4b" >
+    	doc:name="HTTP Listener config">
 		<http:listener-connection host="0.0.0.0" port="8081" />
 	</http:listener-config>
 	
@@ -61,8 +61,7 @@
     </flow>
     
     
-    <flow 
-    	name="post:\organisation:application\json:testapi-config">
+    <flow name="post:\organisation:application\json:testapi-config">
         <logger 
         	level="INFO" 
         	message="post:\organisation:application\json:testapi-config" />

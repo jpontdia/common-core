@@ -33,9 +33,7 @@
 	</http:request-config>
 
 
-	<munit:config
-		name="error-scenarios.xml"
-		minMuleVersion="4.3.0" />
+	<munit:config name="error-scenarios.xml" minMuleVersion="4.4.0" />
 
 	<munit:test name="apikit-status-200-ok" >
 
