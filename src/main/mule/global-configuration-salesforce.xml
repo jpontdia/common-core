@@ -6,9 +6,10 @@
 	xmlns="http://www.mulesoft.org/schema/mule/core"
 	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xsi:schemaLocation="
-		http://www.mulesoft.org/schema/mule/core 
+	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core 
 		http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/salesforce 
+		http://www.mulesoft.org/schema/mule/salesforce/current/mule-salesforce.xsd
 		http://www.mulesoft.org/schema/mule/open-telemetry 
 		http://www.mulesoft.org/schema/mule/open-telemetry/current/mule-open-telemetry.xsd">
 	
@@ -16,10 +17,14 @@
 		doc:name="Configuration properties"
 		file="global-config.yaml" />
 	
-	<open-telemetry:config
-		name="Open_Telemetry_Connector_Config"
-		doc:name="Open Telemetry Connector Config"
-		serviceName="${otel.servicename}"
-		additionalTags="env=${env}"
-    	collectorEndpoint="${otel.collectorendpoint}"/>
+	<salesforce:sfdc-config 
+		name="GlobalSalesforceConfig" 
+		doc:name="Global Salesforce Config" >
+		<salesforce:jwt-connection
+			consumerKey="${salesforce.consumerkey}"
+			keyStore="${salesforce.keystore}"
+			storePassword="${salesforce.storepassword}"
+			principal="${salesforce.principal}" />
+	</salesforce:sfdc-config>
+
 </mule>
