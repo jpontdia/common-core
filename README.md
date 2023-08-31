@@ -1,5 +1,7 @@
 # mule-common-core
 ![Powered by](https://img.shields.io/badge/Powered%20by-Mulesoft-blue.svg)
+  ![Unit test](https://gist.githubusercontent.com/jpontdia/2f22ca2ddf1ba473d6e2cff61cc2fba9/raw/common-core-ut.svg)
+  ![Code coverage](https://gist.githubusercontent.com/jpontdia/2f22ca2ddf1ba473d6e2cff61cc2fba9/raw/common-core-cc.svg)
   ![Build and deploy](https://github.com/jpontdia/mule-common-core/actions/workflows/build.yml/badge.svg)
 <br>
 
