@@ -11,7 +11,7 @@ Shared Mule library that provides reusable flows, resources and configuration se
 
 ## Table of contents
 1. [Description](#description)
-1. [Configuration](#configuration)
+1. [Configuration](#configuration) 
 
 ## Description
 
