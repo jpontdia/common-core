@@ -1,0 +1,23 @@
+name: Deployment
+ 
+on:
+  issues:
+    types: [opened]
+
+jobs: 
+  Deployment:
+    uses: jpontdia/common-devops/.github/workflows/mulesoft-deployment.yml@main
+    if: |
+      contains(toJson(github.event.issue.labels), 'dev') ||
+      contains(toJson(github.event.issue.labels), 'tst') ||
+      contains(toJson(github.event.issue.labels), 'prd')
+    with:
+      keyvault-key: jpworks-keyvault
+    secrets:
+      azure-credentials: ${{ secrets.AZURE_CREDENTIALS }}
+
+    # Needed by the Unit Test Action
+    permissions:
+      contents: write
+      issues: write
+      checks: write
