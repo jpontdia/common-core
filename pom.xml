@@ -5,13 +5,13 @@
 	<parent>
 		<groupId>078efef1-d139-48ed-92f5-f8d4a0592374</groupId>
 		<artifactId>common-parent-pom</artifactId>
-		<version>1.0.14</version>
+		<version>1.0.15</version>
 		<relativePath/>
 	</parent>
 
 	<groupId>078efef1-d139-48ed-92f5-f8d4a0592374</groupId>
 	<artifactId>common-core</artifactId>
-	<version>1.0.13</version>
+	<version>1.0.14</version>
 	<packaging>mule-application</packaging>
 	<name>common-core</name>
 	<description>Shared Mule library that provides reusable flows, resources and configuration settings common for all applications</description>
@@ -30,7 +30,7 @@
 				<artifactId>mule-maven-plugin</artifactId>
 				<extensions>true</extensions>
 				<configuration>
-					<classifier>mule-application</classifier>
+					<classifier>mule-plugin</classifier>
 				</configuration>
 			</plugin>
 		</plugins>
