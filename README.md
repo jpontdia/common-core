@@ -12,7 +12,9 @@ Shared Mule library that provides reusable flows, resources and configuration se
 
 ## Table of contents
 1. [Description](#description)
-1. [Configuration](#configuration) 
+1. [Salesforce](#salesforce) 
+    1. [JWT configuration](#salesforce-jwt-configuration)
+    2. [Connector configuration](#salesforce-connector-configuration)
 
 ## Description
 
@@ -32,16 +34,24 @@ Multiple common components like flows, sub-flows, etc. to be re-used across the 
 
 In summary, having a project with common assets like flows, configurations, and other reusable components brings numerous benefits, including reusability, consistency, efficiency, maintainability, scalability, and collaboration. It empowers developers to build integration solutions more effectively, accelerates development cycles, and ensures high-quality and reliable outcomes.
 
-## Configuration
+## Salesforce
+
+### Salesforce JWT configuration
+Find the instrucctions in the Development Process Document in Anypoint Exchange.
+
+### Salesforce connector configuration
 
 The next properties must be provided to run the service:
 
 | Property                  | Description               |
 | ------------------------- | ------------------------- |
-| salesforce.keystore       | Keystore with cetificates to connect with Salesforce. Salesforce JWT Authentication |
-| salesforce.consumerkey    | Salesforce Consumer Key   |
-| salesforce.principal      | Salesforce User           |
-| salesforce.storepassword  | Password for the keystore |
+| salesforce.keystore       | Keystore with the cetificate to connect with Salesforce. |
+| salesforce.consumerkey    | Connected App Consumer Key   |
+| salesforce.principal      | The user created in Salesforce that has the profile assigned to the Connected App           |
+| salesforce.storepassword  | The password to open the keystore |
+| salesforce.certificatealias  | The alias of the certificate inside the keystore |
+| salesforce.tokenendpoint  | The URL to generate the authentication token |
+| salesforce.audienceurl  | test.salesforce.com for a sandbox environment and login.salesforce.com for production. |
 
 <br>
 

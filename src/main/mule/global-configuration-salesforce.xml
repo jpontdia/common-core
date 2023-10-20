@@ -24,7 +24,7 @@
 			consumerKey="${salesforce.consumerkey}"
 			keyStore="${salesforce.keystore}"
 			storePassword="${salesforce.storepassword}"
-			principal="${salesforce.principal}" />
+			principal="${salesforce.principal}" certificateAlias="${salesforce.certificatealias}" tokenEndpoint="${salesforce.tokenendpoint}" audienceUrl="${salesforce.audienceurl}"/>
 	</salesforce:sfdc-config>
 
 </mule>

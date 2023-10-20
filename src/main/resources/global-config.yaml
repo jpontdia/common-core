@@ -6,14 +6,17 @@ salesforce:
   consumerkey: "my-consumer-key"
   keystore: "my-keystore.jks"
   storepassword: "the-kystore-password"
-  principal: "user-in-salesforce"  
+  certificatealias: "the-certificate-inside-keystore"
+  principal: "user-in-salesforce"
+  tokenendpoint: "salesforce-token-endpoint"
+  audienceurl: "https://test.salesforce.com-(sandbox)"
   
-#OpenTelemtry configuration
+# OpenTelemtry configuration
 otel:
   collectorendpoint: "http://localhost:4317"
   servicename: "myservice"
 
-#Service messages
+# Service messages
 messages:
   backend-error: "There was a problem while trying to access the backend repository"
   apikit-400: "Bad request"
@@ -22,9 +25,7 @@ messages:
   apikit-406: "Not acceptable"
   apikit-415: "Unsupported media type"
   apikit-501: "Not Implemented"
-  
-  
+
 # Logging - logz.io
-# Add the jar files in the service pom
 logzio.token: "MyToken"
 logzio.url: "MyUrl"
