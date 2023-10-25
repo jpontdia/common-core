@@ -11,7 +11,7 @@
 
 	<groupId>078efef1-d139-48ed-92f5-f8d4a0592374</groupId>
 	<artifactId>common-core</artifactId>
-	<version>1.0.20</version>
+	<version>1.0.21</version>
 	<packaging>mule-application</packaging>
 	<name>common-core</name>
 	<description>Shared Mule library that provides reusable flows, resources and configuration settings common for all applications</description>

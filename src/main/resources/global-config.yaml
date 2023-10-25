@@ -16,6 +16,10 @@ otel:
   collectorendpoint: "http://localhost:4317"
   servicename: "myservice"
 
+# Logging - logz.io
+logzio.token: "MyToken"
+logzio.url: "MyUrl"
+
 # Service messages
 messages:
   backend-error: "There was a problem while trying to access the backend repository"
@@ -25,7 +29,10 @@ messages:
   apikit-406: "Not acceptable"
   apikit-415: "Unsupported media type"
   apikit-501: "Not Implemented"
+  record-delete-success: "The record was deleted successfully"
+  record-delete-error: "The record cannot be deleted; it doesn´t exist or has relationships with other resources"
+  record-create-success: "The record was created successfully"
+  record-create-error: "There was a problem while creating the record"
+  record-exists: "The record already exists"
 
-# Logging - logz.io
-logzio.token: "MyToken"
-logzio.url: "MyUrl"
+
