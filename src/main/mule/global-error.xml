@@ -21,9 +21,10 @@
 			<ee:transform doc:name="Response">
 				<ee:message >
 					<ee:set-payload ><![CDATA[%dw 2.0
-output application/json
----
-{message: "${messages.apikit-404}"}]]></ee:set-payload>
+						output application/json
+						---
+						{message: "${messages.apikit-404}"}]]>
+					</ee:set-payload>
 				</ee:message>
 				<ee:variables >
 					<ee:set-variable variableName="httpStatus" ><![CDATA[404]]></ee:set-variable>
@@ -41,9 +42,10 @@ output application/json
 			<ee:transform doc:name="Response" >
 				<ee:message >
 					<ee:set-payload ><![CDATA[%dw 2.0
-output application/json
----
-{message: "${messages.apikit-400}"}]]></ee:set-payload>
+						output application/json
+						---
+						{message: "${messages.apikit-400}"}]]>
+					</ee:set-payload>
 				</ee:message>
 				<ee:variables >
 					<ee:set-variable variableName="httpStatus" ><![CDATA[400]]></ee:set-variable>
@@ -61,9 +63,10 @@ output application/json
 			<ee:transform doc:name="Response" >
 				<ee:message >
 					<ee:set-payload ><![CDATA[%dw 2.0
-output application/json
----
-{message: "${messages.apikit-405}"}]]></ee:set-payload>
+						output application/json
+						---
+						{message: "${messages.apikit-405}"}]]>
+					</ee:set-payload>
 				</ee:message>
 				<ee:variables >
 					<ee:set-variable variableName="httpStatus" ><![CDATA[405]]></ee:set-variable>
@@ -81,9 +84,10 @@ output application/json
 			<ee:transform doc:name="Response" >
 				<ee:message >
 					<ee:set-payload ><![CDATA[%dw 2.0
-output application/json
----
-{message: "${messages.apikit-406}"}]]></ee:set-payload>
+						output application/json
+						---
+						{message: "${messages.apikit-406}"}]]>
+					</ee:set-payload>
 				</ee:message>
 				<ee:variables >
 					<ee:set-variable variableName="httpStatus" ><![CDATA[406]]></ee:set-variable>
@@ -100,9 +104,10 @@ output application/json
 			<ee:transform doc:name="Response" >
 				<ee:message >
 					<ee:set-payload ><![CDATA[%dw 2.0
-output application/json
----
-{message: "${messages.apikit-501}"}]]></ee:set-payload>
+						output application/json
+						---
+						{message: "${messages.apikit-501}"}]]>
+					</ee:set-payload>
 				</ee:message>
 				<ee:variables >
 					<ee:set-variable variableName="httpStatus" ><![CDATA[501]]></ee:set-variable>
@@ -119,9 +124,10 @@ output application/json
 			<ee:transform doc:name="Response" >
 				<ee:message >
 					<ee:set-payload ><![CDATA[%dw 2.0
-output application/json
----
-{message: "${messages.apikit-415}"}]]></ee:set-payload>
+						output application/json
+						---
+						{message: "${messages.apikit-415}"}]]>
+					</ee:set-payload>
 				</ee:message>
 				<ee:variables >
 					<ee:set-variable variableName="httpStatus" ><![CDATA[415]]></ee:set-variable>
@@ -140,10 +146,11 @@ output application/json
 			<ee:transform doc:name="Response" >
 				<ee:message >
 					<ee:set-payload ><![CDATA[%dw 2.0
-output application/json
----
-{message: "${messages.backend-error}"}
-]]></ee:set-payload>
+						output application/json
+						---
+						{message: "${messages.backend-error}"}
+						]]>
+					</ee:set-payload>
 				</ee:message>
 			</ee:transform>
 		</on-error-propagate>

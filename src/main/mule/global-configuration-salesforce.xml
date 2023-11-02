@@ -24,7 +24,10 @@
 			consumerKey="${salesforce.consumerkey}"
 			keyStore="${salesforce.keystore}"
 			storePassword="${salesforce.storepassword}"
-			principal="${salesforce.principal}" certificateAlias="${salesforce.certificatealias}" tokenEndpoint="${salesforce.tokenendpoint}" audienceUrl="${salesforce.audienceurl}">
+			principal="${salesforce.principal}" 
+			certificateAlias="${salesforce.certificatealias}" 
+			tokenEndpoint="${salesforce.tokenendpoint}" 
+			audienceUrl="${salesforce.audienceurl}">
 			<reconnection >
 				<reconnect />
 			</reconnection>

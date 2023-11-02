@@ -5,13 +5,13 @@
 	<parent>
 		<groupId>078efef1-d139-48ed-92f5-f8d4a0592374</groupId>
 		<artifactId>common-parent-pom</artifactId>
-		<version>1.0.28</version>
+		<version>1.0.30</version>
 		<relativePath/>
 	</parent>
 
 	<groupId>078efef1-d139-48ed-92f5-f8d4a0592374</groupId>
 	<artifactId>common-core</artifactId>
-	<version>1.0.22</version>
+	<version>1.0.23</version>
 	<packaging>mule-application</packaging>
 	<name>common-core</name>
 	<description>Shared Mule library that provides reusable flows, resources and configuration settings common for all applications</description>

@@ -29,9 +29,12 @@
 			doc:name="Query" 
 			config-ref="GlobalSalesforceConfig">
 			
-			<salesforce:salesforce-query ><![CDATA[SELECT firstName__c, lastName__c, address__c, Id 
-FROM Customer__c 
- WHERE Id ='a018b00000z9s56AAA']]></salesforce:salesforce-query>
+			<salesforce:salesforce-query ><![CDATA[
+				SELECT firstName__c, lastName__c, address__c, Id 
+				FROM Customer__c 
+				WHERE Id ='a018b00000z9s56AAA'
+			]]>
+ 			</salesforce:salesforce-query>
 		</salesforce:query>
 		<logger level="INFO" doc:name="show payload" message="#[payload]"/>
 	</flow>
