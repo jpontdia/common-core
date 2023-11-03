@@ -22,7 +22,7 @@
 
 	<munit:dynamic-port propertyName="http.port"/>
 
-    <http:request-config name="HTTP_Request_Configuration">
+    <http:request-config name="http_test_local_configuration">
         <http:request-connection host="0.0.0.0" port="${http.port}" />
     </http:request-config>
 	
@@ -36,7 +36,7 @@
 			<logger doc:name="start" level="INFO" message="Test Salesforce Connector"/>
 				
 			<http:request 
-				config-ref="HTTP_Request_configuration" 
+				config-ref="http_test_local_configuration" 
 				doc:name="Request" 
 				method="GET" 
 				outputMimeType="application/json" 
