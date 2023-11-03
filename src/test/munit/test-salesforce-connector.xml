@@ -19,12 +19,12 @@
 		http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
 
 	<munit:config name="test-salesforce-connector-configuration"/>
-	<http:request-config 
-		doc:name="HTTP Request configuration" 
-		name="HTTP_Request_configuration">
-	
-		<http:request-connection host="localhost" port="8081"/>
-	</http:request-config>
+
+	<munit:dynamic-port propertyName="http.port"/>
+
+    <http:request-config name="HTTP_Request_Configuration">
+        <http:request-connection host="0.0.0.0" port="${http.port}" />
+    </http:request-config>
 	
 	<munit:test name="test-salesforce-connector">
 
@@ -40,17 +40,12 @@
 				doc:name="Request" 
 				method="GET" 
 				outputMimeType="application/json" 
-				path="/testsalesforce"/>
-				
-			<logger doc:name="result" level="INFO" message="#[payload]"/>
+				path="/testsalesforce">
+				<http:response-validator>
+					<http:success-status-code-validator values="200" />
+				</http:response-validator>
+			</http:request>
 		</munit:execution>
-
-		<munit:validation>
-			<munit-tools:assert-that 
-				doc:name="Assert that" 
-				expression="#[payload != null]" 
-				is="#[MunitTools::notNullValue()]"/>
-		</munit:validation>
 		
 	</munit:test>
 

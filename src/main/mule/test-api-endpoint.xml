@@ -24,7 +24,7 @@
     	
     <http:listener-config name="testlocal_HTTP_Listener_config"
     	doc:name="HTTP Listener config">
-		<http:listener-connection host="0.0.0.0" port="8081" />
+		<http:listener-connection host="0.0.0.0" port="${http.port}" />
 	</http:listener-config>
 	
 	<flow name="testapi-main">

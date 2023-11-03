@@ -1,6 +1,10 @@
 # Default environment
 env: local
 
+# Listening port of the serivce
+http:
+  port: "8081"
+  
 # Salesfoce Connection
 salesforce:
   consumerkey: "my-consumer-key"

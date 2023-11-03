@@ -12,13 +12,11 @@
 		http://www.mulesoft.org/schema/mule/open-telemetry 
 		http://www.mulesoft.org/schema/mule/open-telemetry/current/mule-open-telemetry.xsd">
 	
-	<configuration-properties 
-		doc:name="Configuration properties"
+	<configuration-properties doc:name="Configuration properties"
 		file="global-config.yaml" />
 	
-	<open-telemetry:config
+	<open-telemetry:config doc:name="Open Telemetry Connector Config"
 		name="Open_Telemetry_Connector_Config"
-		doc:name="Open Telemetry Connector Config"
 		serviceName="${otel.servicename}"
 		additionalTags="env=${env}"
     	collectorEndpoint="${otel.collectorendpoint}"/>
