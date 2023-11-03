@@ -30,12 +30,14 @@
 			config-ref="GlobalSalesforceConfig">
 			
 			<salesforce:salesforce-query ><![CDATA[
-				SELECT firstName__c, lastName__c, address__c, Id 
-				FROM Customer__c 
+				SELECT Id 
+				FROM Contact 
 				WHERE Id ='a018b00000z9s56AAA'
 			]]>
  			</salesforce:salesforce-query>
 		</salesforce:query>
-		<logger level="INFO" doc:name="show payload" message="#[payload]"/>
+		<logger doc:name="show payload"
+			level="INFO" 
+			message="#[output application/json --- if ( payload != null) payload else 'No records found']"/>
 	</flow>
 </mule>
