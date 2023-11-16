@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule 
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:db="http://www.mulesoft.org/schema/mule/db"
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/db 
+		http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd 
+		http://www.mulesoft.org/schema/mule/core 
+		http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+">
+	
+	<configuration-properties 
+		doc:name="Configuration properties"
+		file="common-config.yaml" />
+	
+	<db:config name="MSSQL_Server_Config"
+		doc:name="Database Config"
+		doc:description="This is used to connect to the on-prem Microsoft SQL Server">
+		<db:mssql-connection 
+			host="${mssql.prd.host}"
+			user="${mssql.prd.user}"
+			password='${mssql.prd.pass}'
+			databaseName="${mssql.prd.name}" />
+	</db:config>
+
+</mule>

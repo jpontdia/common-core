@@ -5,22 +5,22 @@
 	<parent>
 		<groupId>078efef1-d139-48ed-92f5-f8d4a0592374</groupId>
 		<artifactId>common-parent-pom</artifactId>
-		<version>1.0.30</version>
+		<version>1.0.33</version>
 		<relativePath/>
 	</parent>
 
 	<groupId>078efef1-d139-48ed-92f5-f8d4a0592374</groupId>
 	<artifactId>common-core</artifactId>
-	<version>1.0.25</version>
+	<version>1.0.27</version>
 	<packaging>mule-application</packaging>
 	<name>common-core</name>
 	<description>Shared Mule library that provides reusable flows, resources and configuration settings common for all applications</description>
 
 	<properties>
 		<!-- Exchange documentation -->
-		<fields key="sourceCode">https://github.com/jpontdia/mule-common-core</fields>
+		<fields key="sourceCode">https://github.com/jpontdia/common-core</fields>
 		<categories key="Asset type">Common</categories>
-		<tags>Common, Salesfoce, OpenTelemetry</tags>
+		<tags>Common, Salesforce, OpenTelemetry, Snowflake, SQLServer, Email</tags>
 	</properties>
 
 	<build>
@@ -31,17 +31,62 @@
 				<extensions>true</extensions>
 				<configuration>
 					<classifier>mule-plugin</classifier>
+					<sharedLibraries>
+						<sharedLibrary>
+							<groupId>com.microsoft.sqlserver</groupId>
+							<artifactId>mssql-jdbc</artifactId>
+						</sharedLibrary>
+						<sharedLibrary>
+							<groupId>net.snowflake</groupId>
+							<artifactId>snowflake-jdbc</artifactId>
+						</sharedLibrary>
+					</sharedLibraries>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
 
 	<dependencies>
+
 		<!-- Salesforce connector -->
 		<dependency>
 			<groupId>com.mulesoft.connectors</groupId>
 			<artifactId>mule-salesforce-connector</artifactId>
 			<classifier>mule-plugin</classifier>
+		</dependency>
+
+		<!-- Mule extension that provides functionality to send and receive emails through POP3, IMAP and SMTP -->
+		<dependency>
+			<groupId>org.mule.connectors</groupId>
+			<artifactId>mule-email-connector</artifactId>
+			<classifier>mule-plugin</classifier>
+		</dependency>
+
+		<!-- Database connectors -->
+		<dependency>
+			<groupId>org.mule.connectors</groupId>
+			<artifactId>mule-db-connector</artifactId>
+			<classifier>mule-plugin</classifier>
+		</dependency>
+		<dependency>
+			<groupId>com.mulesoft.connectors</groupId>
+			<artifactId>mule4-snowflake-connector</artifactId>
+			<classifier>mule-plugin</classifier>
+		</dependency>
+
+		<!-- Database drivers -->
+		<dependency>
+			<groupId>com.microsoft.sqlserver</groupId>
+			<artifactId>mssql-jdbc</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.microsoft.sqlserver</groupId>
+			<artifactId>mssql-jdbc_auth</artifactId>
+			<type>dll</type>
+		</dependency>
+		<dependency>
+			<groupId>net.snowflake</groupId>
+			<artifactId>snowflake-jdbc</artifactId>
 		</dependency>
 
 		<!-- OpenTelemetry connector -->

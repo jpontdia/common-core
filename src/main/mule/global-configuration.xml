@@ -20,4 +20,28 @@
 		serviceName="${otel.servicename}"
 		additionalTags="env=${env}"
     	collectorEndpoint="${otel.collectorendpoint}"/>
+
+	<tls:context name="TLS_Context" 
+		doc:name="TLS Context"
+		doc:description="This connector is used to secure HTTP connectors with TLS 1.2 security and encryption. This is necessary for communications between mule apps and other services outside Anypoint but also is just another layer of security between the services hosted on Anypoint">
+		<tls:key-store type="jks" 
+			path="${jks.path}"
+			keyPassword="${jks.keypassword}"
+			password="${jks.keypassword}" />
+	</tls:context>
+	
+	<email:smtp-config name="Email_SMTP_Config"
+		doc:name="Email SMTP" 
+		doc:description="This is all of the configuration settings that are needed to send emails with the Mulesoft email account from the mule app for the email item make sure you set the advanced `mail.smtp.starttls.enable` inline attribute to `true`"
+		from="${email.user}">
+		<email:smtp-connection host="${email.host}"
+			port="${email.port}"
+			user="${email.user}" 
+			password="${email.pass}">
+			<email:properties>
+				<email:property key="mail.smtp.starttls.enable"
+					value="true" />
+			</email:properties>
+		</email:smtp-connection>
+	</email:smtp-config>
 </mule>
