@@ -1,4 +1,4 @@
-# common-core
+# Common configurations for Mulesoft services
 ![Powered by](https://img.shields.io/badge/Powered%20by-Mulesoft-535597.svg)
   ![Unit test](https://gist.githubusercontent.com/jpontdia/2f22ca2ddf1ba473d6e2cff61cc2fba9/raw/common-core-ut.svg)
   ![Code coverage](https://gist.githubusercontent.com/jpontdia/2f22ca2ddf1ba473d6e2cff61cc2fba9/raw/common-core-cc.svg)
@@ -15,6 +15,8 @@ Shared Mule library that provides reusable flows, resources and configuration se
 1. [Salesforce](#salesforce) 
     1. [JWT configuration](#salesforce-jwt-configuration)
     2. [Connector configuration](#salesforce-connector-configuration)
+1. [Snowflake](#snowflake) 
+
 
 ## Description
 
@@ -41,7 +43,7 @@ Find the instrucctions in the Development Process Document in Anypoint Exchange.
 
 ### Salesforce connector configuration
 
-The next properties must be provided to run the service:
+Connection properties:
 
 | Property                  | Description               |
 | ------------------------- | ------------------------- |
@@ -53,8 +55,21 @@ The next properties must be provided to run the service:
 | salesforce.tokenendpoint  | The URL to generate the authentication token |
 | salesforce.audienceurl  | test.salesforce.com for a sandbox environment and login.salesforce.com for production. |
 
-<br>
+## Snowflake
 
+Connection properties:
+
+| Property                     | Description               |
+| ---------------------------- | ------------------------- |
+| snowflake.accountname        | Account name that was provided when registering for the Snowflake account |
+| snowflake.warehouse          | Name of the Snowflake warehouse to use |
+| snowflake.database           | Snowflake database to connect to |
+| snowflake.schema             | Snowflake database schema to use |
+| snowflake.user               | Snowflake database username used to initialize the session |
+| snowflake.password           | Snowflake database password used to authenticate the user |
+| snowflake.role               | Role assigned to the user |
+
+<br>
 ---
 
 - [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
