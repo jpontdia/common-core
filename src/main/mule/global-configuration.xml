@@ -2,13 +2,15 @@
 
 <mule 
 	xmlns:open-telemetry="http://www.mulesoft.org/schema/mule/open-telemetry"
-	xmlns:salesforce="http://www.mulesoft.org/schema/mule/salesforce"
+	xmlns:email="http://www.mulesoft.org/schema/mule/email"
 	xmlns="http://www.mulesoft.org/schema/mule/core"
 	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xsi:schemaLocation="
 		http://www.mulesoft.org/schema/mule/core 
 		http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/email 
+		http://www.mulesoft.org/schema/mule/email/current/mule-email.xsd 		
 		http://www.mulesoft.org/schema/mule/open-telemetry 
 		http://www.mulesoft.org/schema/mule/open-telemetry/current/mule-open-telemetry.xsd">
 	

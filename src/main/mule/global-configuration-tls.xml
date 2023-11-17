@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <mule 
-	xmlns:open-telemetry="http://www.mulesoft.org/schema/mule/open-telemetry"
-	xmlns:salesforce="http://www.mulesoft.org/schema/mule/salesforce"
+	xmlns:tls="http://www.mulesoft.org/schema/mule/tls"
 	xmlns="http://www.mulesoft.org/schema/mule/core"
 	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xsi:schemaLocation="
 		http://www.mulesoft.org/schema/mule/core 
 		http://www.mulesoft.org/schema/mule/core/current/mule.xsd
-		http://www.mulesoft.org/schema/mule/open-telemetry 
-		http://www.mulesoft.org/schema/mule/open-telemetry/current/mule-open-telemetry.xsd">
+		http://www.mulesoft.org/schema/mule/tls 
+		http://www.mulesoft.org/schema/mule/tls/current/mule-tls.xsd">
 	
 	<configuration-properties doc:name="Configuration properties"
 		file="global-config.yaml" />
