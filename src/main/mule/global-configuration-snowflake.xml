@@ -10,9 +10,8 @@
 		http://www.mulesoft.org/schema/mule/snowflake 
 		http://www.mulesoft.org/schema/mule/snowflake/current/mule-snowflake.xsd">
 	
-	<configuration-properties 
-		doc:name="Configuration properties"
-		file="common-config.yaml" />
+	<configuration-properties doc:name="Configuration properties"
+		file="global-config.yaml" />
 
 	<snowflake:snowflake-config doc:name="Snowflake Config" name="Snowflake_Config">
 		<snowflake:snowflake-connection
